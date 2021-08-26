@@ -20,7 +20,6 @@ provider "restapi" {
 }
 
 resource "restapi_object" "create_policy" {
-  depends_on = [restapi_object.create_repository]
   object_id = "sspolicy"
   path = "/policy/daily-snapshots"
   data = "\"name\": \"weather-data\", \"snapshotName\": \"weather-data-policy1\", \"schedule\": \"0 0 0 * * ?\", \"repository\": \"eck-ss\", \"config\":{\"indices\": [\"weather-data-2016\"]}, \"retention\": {\"expireAfterUnit\": \"d\"}, \"isManagedPolicy\": false}"

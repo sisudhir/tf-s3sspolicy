@@ -1,5 +1,4 @@
 provider "restapi" {
-  alias                = "west"
   uri                  = "http://192.168.1.93:32560/_slm"
   debug                = true
   headers              = {"Content-Type" = "application/json"}

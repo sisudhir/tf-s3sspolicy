@@ -22,7 +22,8 @@ provider "restapi" {
 resource "restapi_object" "create_policy" {
   object_id = "sspolicy"
   path = "/policy/daily-snapshots"
-  data = "{ \"name\":\"weather-data\", \"snapshotName\":\"weather-data-policy1\", \"schedule\":\"0 0 0 * * ?\", \"repository":\"eck-ss\",  \"config":{ \"indices\":[\"weather-data-2016\"] }, \"retention\":{ \"expireAfterUnit\":\"d\" }, \"isManagedPolicy\":\"false\" }" }
+  data = "{ \"name\":\"weather-data\", \"snapshotName\":\"weather-data-policy1\", \"schedule\":\"0 0 0 * * ?\", \"repository":\"eck-ss\",  \"config":{ \"indices\":[\"weather-data-2016\"] }, \"retention\":{ \"expireAfterUnit\":\"d\" }, \"isManagedPolicy\":\"false\" }" 
+}
 
 
 resource "restapi_object" "exec_policy" {

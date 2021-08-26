@@ -27,7 +27,7 @@ resource "restapi_object" "create_policy" {
 
 provider "restapi" {
   alias                = "rest"
-  uri                  = "http://192.168.1.93:32560/_slm/policy"
+  uri                  = "http://192.168.1.93:32560/_slm/policy/daily-snapshots/_execute"
   debug                = true
   headers              = {"Content-Type" = "application/json"}
   write_returns_object = true
@@ -42,6 +42,6 @@ resource "restapi_object" "exec_policy" {
   provider = restapi.rest
   depends_on = [restapi_object.create_policy]
   object_id = "sspolicyexec"
-  path = "/daily-snapshots/_execute"
+  path = "/"
   data = ""
 }

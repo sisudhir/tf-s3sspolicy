@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    restapi = {
+      source = "KirillMeleshko/restapi"
+      version = "1.15.0"
+    }
+  }
+}
+
 provider "restapi" {
   uri                  = "http://192.168.1.93:32560/_slm"
   debug                = true

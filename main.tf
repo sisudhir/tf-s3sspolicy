@@ -29,6 +29,6 @@ resource "restapi_object" "create_policy" {
 resource "restapi_object" "exec_policy" {
   depends_on = [restapi_object.create_policy]
   object_id = "sspolicyexec"
-  path = "/policy/daily-snapshots/_execute"
+  path = "/daily-snapshots/_execute"
   data = ""
 }

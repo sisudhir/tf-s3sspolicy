@@ -30,12 +30,13 @@ provider "restapi" {
   uri                  = "http://192.168.1.93:32560/_slm/policy"
   debug                = true
   headers              = {"Content-Type" = "application/json"}
-  write_returns_object = true
+  create_returns_object = false
+  write_returns_object = false
   insecure             = true
-  #id_attribute         = "/"
-  #create_method        = "PUT"
-  #update_method        = "PUT"
-  #destroy_method       = "PUT"
+  id_attribute         = "/"
+  create_method        = "POST"
+  update_method        = "POST"
+  destroy_method       = "POST"
 }
 
 resource "restapi_object" "exec_policy" {

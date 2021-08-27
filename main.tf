@@ -17,7 +17,7 @@ provider "restapi" {
   create_method        = "PUT"
   update_method        = "PUT"
   destroy_method       = "PUT"
-/
+}
 
 resource "restapi_object" "create_policy" {
   object_id = "sspolicy"

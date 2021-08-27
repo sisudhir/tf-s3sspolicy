@@ -40,7 +40,7 @@ provider "restapi" {
 
 resource "restapi_object" "exec_policy" {
   #provider = restapi.rest
-  depends_on = [restapi_object.create_policy]
+  #depends_on = [restapi_object.create_policy]
   object_id = ""
   path = "/"
   data = ""

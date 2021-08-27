@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-provider "restapi" {
+/*provider "restapi" {
   uri                  = "http://192.168.1.93:32560/_slm/policy"
   debug                = true
   headers              = {"Content-Type" = "application/json"}
@@ -17,17 +17,17 @@ provider "restapi" {
   create_method        = "PUT"
   update_method        = "PUT"
   destroy_method       = "PUT"
-}
+}*/
 
-resource "restapi_object" "create_policy" {
+/*resource "restapi_object" "create_policy" {
   object_id = "sspolicy"
   path = "/daily-snapshots"
   data = "{ \"name\":\"weather-data\", \"snapshotName\":\"weather-data-policy1\", \"schedule\":\"0 0 0 * * ?\", \"repository\":\"eck-ss\",  \"config\":{ \"indices\":[\"weather-data-2016\"] }, \"retention\":{ \"expireAfterUnit\":\"d\" }, \"isManagedPolicy\":\"false\" }" 
-}
+}*/
 
 provider "restapi" {
-  alias                = "rest"
-  uri                  = "http://192.168.1.93:32560/_slm/policy"
+  #alias                = "rest"
+  uri                  = "http://192.168.1.93:32560/_slm/policy/daily-snapshots/_execute"
   debug                = true
   headers              = {"Content-Type" = "application/json"}
   create_returns_object = false
@@ -39,10 +39,10 @@ provider "restapi" {
   destroy_method       = "POST"
 }
 
-resource "restapi_object" "exec_policy" {
-  provider = restapi.rest
-  depends_on = [restapi_object.create_policy]
-  object_id = "execpolicy"
-  path = "/daily-snapshots/_execute"
-  data = ""
-}
+#resource "restapi_object" "exec_policy" {
+  #provider = restapi.rest
+  #depends_on = [restapi_object.create_policy]
+  #object_id = "execpolicy"
+  #path = "/daily-snapshots/_execute"
+  #data = ""
+#}

@@ -33,9 +33,9 @@ provider "restapi" {
   write_returns_object = true
   insecure             = true
   id_attribute         = "/"
-  create_method        = "POST"
-  update_method        = "POST"
-  destroy_method       = "POST"
+  create_method        = "PUT"
+  update_method        = "PUT"
+  destroy_method       = "PUT"
 }
 
 resource "restapi_object" "exec_policy" {

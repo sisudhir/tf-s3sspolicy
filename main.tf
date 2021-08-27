@@ -26,7 +26,7 @@ resource "restapi_object" "create_policy" {
 }
 
 provider "restapi" {
-  #alias                = "rest"
+  alias                = "rest"
   uri                  = "http://192.168.1.93:32560/_slm/policy"
   debug                = true
   headers              = {"Content-Type" = "application/json"}

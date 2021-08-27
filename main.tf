@@ -32,16 +32,16 @@ provider "restapi" {
   headers              = {"Content-Type" = "application/json"}
   write_returns_object = true
   insecure             = true
-  id_attribute         = "/"
-  create_method        = "PUT"
-  update_method        = "PUT"
-  destroy_method       = "PUT"
+  #id_attribute         = "/"
+  #create_method        = "PUT"
+  #update_method        = "PUT"
+  #destroy_method       = "PUT"
 }
 
 resource "restapi_object" "exec_policy" {
   #provider = restapi.rest
   #depends_on = [restapi_object.create_policy]
-  object_id = "execpolicy"
+  #object_id = "execpolicy"
   path = "/daily-snapshots/_execute"
   data = ""
 }

@@ -9,3 +9,10 @@ variable "base_path" {
   description = "ECK snapshot Name"
   default = "eck-ss"
 }
+
+variable "data_name" {
+  type = string
+  description = "Rally track NOAA data name"
+  default = "weather-data"
+}
+

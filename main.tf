@@ -26,6 +26,6 @@ resource "restapi_object" "create_policy" {
   
   object_id = "sspolicy"
   path = "/daily-snapshots"
-  data = "{ \"name\":\"var.data_name\", \"snapshotName\":\"weather-data-policy1\", \"schedule\":\"0 0 0 * * ?\", \"repository\":\"${var.base_path}\",  \"config\":{ \"indices\":[\"weather-data-2016\"] }, \"retention\":{ \"expireAfterUnit\":\"d\" }, \"isManagedPolicy\":\"false\" }" 
+  data = "{ \"name\":\"${var.data_name}\", \"snapshotName\":\"weather-data-policy1\", \"schedule\":\"0 0 0 * * ?\", \"repository\":\"${var.base_path}\",  \"config\":{ \"indices\":[\"weather-data-2016\"] }, \"retention\":{ \"expireAfterUnit\":\"d\" }, \"isManagedPolicy\":\"false\" }" 
 }
 
